@@ -10,11 +10,11 @@
 
 // if (age >= 14 && age <= 90)
 // {
-//   console.log('Buhai')
+//   console.log('Drink')
 // }
 // else
 // {
-//   console.log('Pora v sadik')
+//   console.log('Nope')
 // }
 
 //  if (age < 14 || age > 90) 
@@ -83,15 +83,15 @@
 //  }
 // else if (browser == 'Opera')
 //  {
-//    console.log('Cool game!')
+//    console.log('Cool!')
 //  }
 //  else if (browser == 'Amigo' || browser == 'Yandex')
 //  {
-//    console.log('Ok, boomer')
+//    console.log('Ok...')
 //  }
 //  else
 //  {
-//    console.log('lol')
+//    console.log('Canceled')
 //  }
 
 //  const n = prompt('Enter number: ', '');

@@ -3,7 +3,7 @@ enum Color {Red = 1, Green, Blue};
   
   console.log(colorName);
 
-for (var i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i++) {
       // capture the current state of 'i'
       // by invoking a function with its current value
       (function(i) {

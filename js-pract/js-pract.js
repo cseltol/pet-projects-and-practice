@@ -1,10 +1,10 @@
- const login = prompt('Who are you?', '')
+const login = prompt('Who are you?', '')
  
- let m = (login == 'Intern') ? 'Hi!':
-   (login == 'CEO') ? 'Категорически вас приветствую!' :
-   (login == '') ? 'No user' :
-   '';
- console.log(m)
+let m = (login == 'Intern') ? 'Hi!':
+  (login == 'CEO') ? 'Категорически вас приветствую!' :
+  (login == '') ? 'No user' :
+  '';
+console.log(m)
 
 const age = prompt('Age?', '');
 
@@ -17,122 +17,122 @@ else
   console.log('Nope')
 }
 
- if (age < 14 || age > 90) 
- {
-   console.log('Kiddo')
- }
- else
- {
-   console.log('Live')
- }
+if (age < 14 || age > 90) 
+{
+  console.log('Kiddo')
+}
+else
+{
+  console.log('Live')
+}
 
- const userLogin = prompt('Enter Login, please: ', '')
+const userLogin = prompt('Enter Login, please: ', '')
 
- if (userLogin == 'Admin' || userLogin == 'VasyaNagibator228')
- {
-   console.log('Категорически вас приветствую!')
- }
- else if (userLogin == '')
- {
-   console.log('Отменено')
- }
- else
- {
-   console.log('idk')
- }
+if (userLogin == 'Admin' || userLogin == 'VasyaNagibator228')
+{
+  console.log('Категорически вас приветствую!')
+}
+else if (userLogin == '')
+{
+  console.log('Error')
+}
+else
+{
+  console.log('idk')
+}
 
- for (let i = 2; i <= 10; i++)
- {
-   if (i % 2 == 0)
-   {
-     console.log(i)
-   }
- }
+for (let i = 2; i <= 10; i++)
+{
+  if (i % 2 == 0)
+  {
+    console.log(i)
+  }
+}
 
- let i = 0;
+let i = 0;
 
- while (i < 3)
- {
-   console.log(`number ${i}!`);
-   i++;
- }
+while (i < 3)
+{
+  console.log(`number ${i}!`);
+  i++;
+}
 
- let userInput;
+let userInput;
 
- do {
-   userInput = prompt('Enter a number greater than 100:', '');
- } while (userInput < 100 & userInput)
+do {
+  userInput = prompt('Enter a number greater than 100:', '');
+} while (userInput < 100 & userInput)
 
- let n = 10;
+let n = 10;
 
- nextPrime:
- for (let i = 2; i <= n; i++) 
- {
-   for (let j = 2; j < i; j++) 
-   {
-     if (i % j == 0) continue nextPrime;
-   }
-   console.log( i ); 
- }
+//nextPrime:
+for (let i = 2; i <= n; i++) 
+{
+  for (let j = 2; j < i; j++) 
+  {
+    if (i % j == 0) continue nextPrime;
+  }
+  console.log( i ); 
+}
 
- let browser = prompt('What browser you are using now?', '');
+let browser = prompt('What browser you are using now?', '');
 
- if (browser == 'Edge')
- {
-   console.log('Install Firefox or Chrome?')
- }
+if (browser == 'Edge')
+{
+  console.log('Install Firefox or Chrome?')
+}
 else if (browser == 'Opera')
- {
-   console.log('Cool game!')
- }
- else if (browser == 'Amigo' || browser == 'Yandex')
- {
-   console.log('Ok, boomer')
- }
- else
- {
-   console.log('lol')
- }
+{
+  console.log('Cool game!')
+}
+else if (browser == 'Amigo' || browser == 'Yandex')
+{
+  console.log('Ok, boomer')
+}
+else
+{
+  console.log('lol')
+}
 
- const n = prompt('Enter number: ', '');
+const n = prompt('Enter number: ', '');
 
- switch(n)
- {
-   case 1:
-     console.log('1')
-     break;
-   case 2:
-     console.log('2')
-     break;
-   default:
-     console.log('p or p')
- }
-
- function checkAge(age)
- {
-   return (age > 18) ? true : console.log('Confirm from parents?');
+switch(n)
+{
+  case 1:
+    console.log('1')
+    break;
+  case 2:
+    console.log('2')
+    break;
+  default:
+    console.log('p or p')
  }
 
- checkAge(22)
- checkAge(17)
+function checkAge(age)
+{
+  return (age > 18) ? true : console.log('Confirm from parents?');
+}
 
- function min(a, b)
- {
-   return (a < b) ? a : b;
- }
+checkAge(22)
+checkAge(17)
 
- min(2, 5)
- min(3, -1)
- min(1, 1)
+function min(a, b)
+{
+  return (a < b) ? a : b;
+}
 
- function pow(x, n)
- {
-   return x**n;
- }
+min(2, 5)
+min(3, -1)
+min(1, 1)
 
- pow(3, 2)
- pow(3, 3) 
- pow(1, 100)
+function pow(x, n)
+{
+  return x**n;
+}
+
+pow(3, 2)
+pow(3, 3) 
+pow(1, 100)
 
 function ask(question, yes, no) {
   if (confirm(question)) yes()

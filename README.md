@@ -1,11 +1,11 @@
 # My practice on diffrent languages
 ## Such as:
-`1. Go`
+`Go`
 
-`2. Python`
+`Python`
 
-`3. Rust`
+`Rust`
 
-`4. JavaScript/TypeScript`
+`JavaScript/TypeScript`
 
-`5. C/C++`
+`C/C++`

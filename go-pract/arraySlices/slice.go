@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func slices() {
 
 	aSlice := []int{1, 2, 3, 4, 5}
 	fmt.Println(aSlice)

@@ -8,7 +8,7 @@ const (
 	ADMIN = "admin"
 )
 
-func mainInterfaces() {
+func main() {
 	user := getUser()
 	fmt.Printf("\n is Admin: %v\n", user.GetBalance())
 }

@@ -1,4 +1,3 @@
-// package http_golang_server_tests
 package main
 
 import (
@@ -31,7 +30,7 @@ func handleFib(w http.ResponseWriter, r *http.Response) {
 	io.WriteString(w, strconv.Itoa(fib(n)))
 }
 
-func fib(n int) int {
+func Fib(n int) int {
 	if n <= 1 {
 		return n
 	}

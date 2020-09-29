@@ -49,5 +49,3 @@ func MessageInThread_Second() {
 func SecondPrint() {
 	fmt.Println("Hi there!")
 }
-
-// Используется в редких случаях

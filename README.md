@@ -1,1 +1,1 @@
-### My practice on `Go` and `JavaScript/TypeScript` 
+### My practice on `Go`, `Python` and `JavaScript/TypeScript` 

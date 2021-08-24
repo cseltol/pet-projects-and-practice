@@ -20,7 +20,7 @@ def fib(n):
 
 
 def main():
-    pass
+    print(fib(22))
 
 
 if __name__ == '__main__':

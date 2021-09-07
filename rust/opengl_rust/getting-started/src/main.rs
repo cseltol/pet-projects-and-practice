@@ -9,14 +9,14 @@ const SCR_WIDTH: u32 = 800;
 const SCR_HEIGHT: u32 = 600;
 
 pub fn main() {
-    /// glfw: initialize and configure
+    // glfw: initialize and configure
     let mut glfw = glfw::init(glfw::FAIL_ON_ERRORS).unwrap();
     glfw.window_hint(glfw::WindowHint::ContextVersion(3, 3));
     glfw.window_hint(glfw::WindowHint::OpenGlProfile(glfw::OpenGlProfileHint::Core));
     #[cfg(target_os = "windows")]
     glfw.window_hint(glfw::WindowHint::OpenGlForwardCompat(true));
 
-    /// glfw window creation
+    // glfw window creation
     let (mut window, events) = glfw.create_window(SCR_WIDTH, SCR_HEIGHT, "GettingStartedOpenGl", glfw::WindowMode::Windowed)
         .expect("Failed to create GLFW window");
     
@@ -24,26 +24,26 @@ pub fn main() {
     window.set_key_polling(true);
     window.set_framebuffer_size_polling(true);
 
-    /// gl: load all OpenGl function pointers
+    // gl: load all OpenGl function pointers
     gl::load_with(|symbol| window.get_proc_address(symbol) as *const _);
 
-    /// Render loop
+    // Render loop
     while !window.should_close() {
-        /// events
+        // events
         process_events(&mut window, &events);
 
-        /// glfw: swap buffers and poll IO events (key pressed/released, mouse move etc.)
+        // glfw: swap buffers and poll IO events (key pressed/released, mouse move etc.)
         window.swap_buffers();
         glfw.poll_events();
     }
 }
 
-/// NOTE: not the smae version as in common.rs
+// NOTE: not the smae version as in common.rs
 fn process_events(window: &mut glfw::Window, events: &Receiver<(f64, glfw::WindowEvent)>) {
     for (_, event) in glfw::flush_messages(events) {
         match event {
-            glfw::WindowEvent::FramebufferSize::(width, height) => {
-                /// make sure the viewport matches the new window dimensions
+            glfw::WindowEvent::FramebufferSize(width, height) => {
+                // make sure the viewport matches the new window dimensions
                 unsafe { gl::Viewport(0, 0, width, height) }
             }
             glfw::WindowEvent::Key(Key::Escape, _, Action::Press, _) => window.set_should_close(true),

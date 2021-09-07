@@ -6,7 +6,10 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-
+cgmath = "0.18.0"
+gl = "0.14.0"
+image = "0.23.14"
 
 [dependencies.glfw]
 git = "https://github.com/bjz/glfw-rs.git"
+default-features = false

@@ -38,7 +38,7 @@ class A:
     
     @foo.setter
     def foo(self, value):
-        self.bar = .value
+        self.bar = value
 
 
 a = A()

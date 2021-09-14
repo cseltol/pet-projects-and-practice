@@ -6,7 +6,7 @@ class classmethod(object):
         if clss is None:
             clss = type(obj)
         def newfunc(*args):
-            return sefl.f(clss, *args)
+            return self.f(clss, *args)
         return newfunc
 
 class A:
@@ -17,4 +17,4 @@ class A:
 class B:
     pass
 
-B.foo()
+B.foo() # <class '__main__.B'>

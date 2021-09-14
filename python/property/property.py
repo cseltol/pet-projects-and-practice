@@ -29,3 +29,18 @@ class property(object):
 
     def deleter(self, fdel):
         return type(self)(self.fget, self.fset, fdel)
+
+
+class A:
+    @property
+    def foo(self):
+        return self.bar
+    
+    @foo.setter
+    def foo(self, value):
+        self.bar = .value
+
+
+a = A()
+a.foo = 42
+assert a.foo == 42

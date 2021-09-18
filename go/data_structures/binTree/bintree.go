@@ -1,4 +1,4 @@
-package main
+package bintree
 
 import (
 	"fmt"

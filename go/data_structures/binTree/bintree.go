@@ -46,6 +46,19 @@ func insert(t *Tree, v int) *Tree {
 	return t
 }
 
+func maxDepth(root *Tree) int {
+    if root == nil {
+        return 0
+    }
+    lt := maxDepth(root.Left)
+    rt := maxDepth(root.Right)
+    if lt > rt {
+        return lt + 1
+    } else {
+        return rt + 1
+    }
+}
+
 func main() {
 	tree := create(10)
 	fmt.Println("The value of the root of the tree is", tree.Value)
@@ -56,4 +69,7 @@ func main() {
 	traverse(tree)
 	fmt.Println()
 	fmt.Println("The value of the root of the tree is", tree.Value)
+
+	dp := maxDepth(tree)
+	fmt.Println(dp)
 }

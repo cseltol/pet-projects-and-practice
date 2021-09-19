@@ -1,21 +1,27 @@
 #include <iostream>
-#include <stdio.h>
+
+int power(int x, unsigned p)
+{
+	int answer;
+	if (p == 0) 
+	{
+		answer = 0;
+	}
+	else 
+	{
+		answer = 1;
+		for (int i = 0; i < p; i++) 
+		{
+			answer *= x;
+		}
+	}
+	return answer;
+}
 
 int main() 
 {
-	printf("Hi there!\n");
-	printf("%d", power(3, 3));
-
+	std::cout << power(3, 3) << std::endl;
 	std::cin.ignore();
 
 	return 0;
-}
-
-int power(int x, unsigned p) 
-{ 
-	int answer;
-	while (p--) {
-		answer *= x;
-	}
-	return answer;
 }

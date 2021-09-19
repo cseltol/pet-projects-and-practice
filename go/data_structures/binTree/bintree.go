@@ -7,7 +7,7 @@ import (
 )
 
 type Tree struct {
-	Left *Tree
+	Left  *Tree
 	Value int
 	Right *Tree
 }
@@ -32,7 +32,7 @@ func create(n int) *Tree {
 }
 
 func insert(t *Tree, v int) *Tree {
-	if t ==  nil {
+	if t == nil {
 		return &Tree{nil, v, nil}
 	}
 	if v == t.Value {
@@ -47,16 +47,16 @@ func insert(t *Tree, v int) *Tree {
 }
 
 func maxDepth(root *Tree) int {
-    if root == nil {
-        return 0
-    }
-    lt := maxDepth(root.Left)
-    rt := maxDepth(root.Right)
-    if lt > rt {
-        return lt + 1
-    } else {
-        return rt + 1
-    }
+	if root == nil {
+		return 0
+	}
+	lt := maxDepth(root.Left)
+	rt := maxDepth(root.Right)
+	if lt > rt {
+		return lt + 1
+	} else {
+		return rt + 1
+	}
 }
 
 func main() {

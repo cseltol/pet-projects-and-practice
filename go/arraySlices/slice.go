@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 )
 
 func slices() {
-
-	aSlice := []int{1, 2, 3, 4, 5}
-	fmt.Println(aSlice)
+	a_1 := []int{1, 2, 3, 4, 5}
+	fmt.Println(a_1)
 
 	integers := make([]int, 2)
 	fmt.Println(integers)
@@ -15,16 +15,16 @@ func slices() {
 	integers = nil
 	fmt.Println(integers)
 
-	anArray := [5]int{-1, -2, -3, -4, -5}
+	a_2 := [5]int{-1, -2, -3, -4, -5}
 
-	refAnArray := anArray[:]
+	ref_a_2 := a_2[:]
 
-	fmt.Println(anArray)
-	fmt.Println(refAnArray)
+	fmt.Println(a_2)
+	fmt.Println(ref_a_2)
 
-	anArray[4] = -100
+	a_2[4] = -100
 
-	fmt.Println(refAnArray)
+	fmt.Println(ref_a_2)
 
 	s := make([]byte, 5)
 	fmt.Println(s)
@@ -45,5 +45,13 @@ func slices() {
 			fmt.Println("i:", i, "value:", y)
 		}
 		fmt.Println()
+	}
+}
+
+func create_random_array() {
+	var arr []int
+	for i := 0; i < 10; i++ {
+		r := rand.Intn(100)
+		arr = append(arr, r)
 	}
 }

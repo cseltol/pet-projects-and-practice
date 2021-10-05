@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type n_structure struct {
 	Name string
 	Surname string

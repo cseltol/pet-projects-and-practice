@@ -4,7 +4,7 @@ import router from './router.js'
 import fileUpload from 'express-fileupload';
 
 const PORT = 8080;
-const DB_URl = `mongodb+srv://user:root@someback.j1qke.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+const DB_URl = `db-url`;
 const app = express();
 
 app.use(express.json())

@@ -24,23 +24,27 @@ class MainWindow(QtWidgets.QMainWindow):
         # which defines a single set of axes as self.axes.
         sc = MplCanvas(self, width=5, height=4, dpi=100)
         # First array is X and the second - Y
-        # TODO: make it read from a file or from stdin
-        sc.axes.plot([1, 2, 3, 4, 5], [0.028, 0.057, 0.089, 0.116, 0.145])
-        self.setCentralWidget(sc)
+        with open("input.txt", "r") as inputData:
+            data = inputData.read()        
+            x, y = data.split("\n")
+            x = list(map(float, x.split(", ")))
+            y = list(map(float, y.split(", ")))        
+            sc.axes.plot(x, y)
+            self.setCentralWidget(sc)
 
-        # Create toolbar, passing canvas as first parament, parent (self, the MainWindow) as second.
-        toolbar = NavigationToolbar(sc, self)
+            # Create toolbar, passing canvas as first parament, parent (self, the MainWindow) as second.
+            toolbar = NavigationToolbar(sc, self)
 
-        layout = QtWidgets.QVBoxLayout()
-        layout.addWidget(toolbar)
-        layout.addWidget(sc)
+            layout = QtWidgets.QVBoxLayout()
+            layout.addWidget(toolbar)
+            layout.addWidget(sc)
 
-        # Create a placeholder widget to hold our toolbar and canvas.
-        widget = QtWidgets.QWidget()
-        widget.setLayout(layout)
-        self.setCentralWidget(widget)
+            # Create a placeholder widget to hold our toolbar and canvas.
+            widget = QtWidgets.QWidget()
+            widget.setLayout(layout)
+            self.setCentralWidget(widget)
 
-        self.show()
+            self.show()
 
 
 def main():

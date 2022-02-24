@@ -27,8 +27,12 @@ class MainWindow(QtWidgets.QMainWindow):
         with open("input.txt", "r") as inputData:
             data = inputData.read()        
             x, y = data.split("\n")
-            x = list(map(float, x.split(", ")))
-            y = list(map(float, y.split(", ")))        
+            x = list(map(float, x.split(",")))
+            y = list(map(float, y.split(","))) 
+            # 0.01,0.02,0.03,0.04,0.05,   22.45,37.64,61.35,79.50,101.20,
+        # x = [79.25,79.35,79.45,79.55,79.65,79.80,79.85,79.95,80.05,80.15,80.25,80.35,80.45,80.55,80.65,80.75]
+        # y = [0.03,0.03,0.04,0.05,0.06,0.07,0.09,0.09,0.10,0.10,0.09,0.07,0.06,0.04,0.04,0.04]
+        
             sc.axes.plot(x, y)
             self.setCentralWidget(sc)
 

@@ -16,5 +16,5 @@ func main() {
 			panic(err)
 		}
 	}
-	fmt.Fprintln(os.Stdout, "\n")
+	fmt.Fprintln(os.Stdout)
 }

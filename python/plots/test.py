@@ -1,3 +1,4 @@
+from cProfile import label
 import matplotlib.pyplot as plt
 
 def main():
@@ -7,10 +8,16 @@ def main():
         x = list(map(float, x.split(",")))
         y = list(map(float, y.split(",")))
 
-    plt.plot(x, y)
+    ty = [0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3]
+    plt.plot(x, y, 'o-')
+    plt.plot(x, ty, '-',label="Средняя линия")
+    plt.title("Контрольная карта Шухарта для контроля погрешностей")
     plt.xlabel("Номер контрольной процедуры")
     plt.ylabel("Результат контрольной процедуры")
-    plt.show()
+    plt.legend()
+    plt.grid()
+    # plt.show()
+    plt.savefig('plot-delta.png')
 
 
 if __name__ == '__main__':

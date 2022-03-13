@@ -5,11 +5,11 @@ P = 0.95
 q_tab = 0.55 # при N = 8
 F_crit = 3.79 # критерий Фишера
 
-firstRow = sorted([1.02, 1.02, 1.01, 1.03, 1.00, 1.03, 1.02, 1.01])
-secondRow = sorted([1.02, 1.00, 1.02, 1.03, 1.03, 1.02, 1.03, 1.02])
+# firstRow = sorted([1.02, 1.02, 1.01, 1.03, 1.00, 1.03, 1.02, 1.01])
+# secondRow = sorted([1.02, 1.00, 1.02, 1.03, 1.03, 1.02, 1.03, 1.02])
 
-# firstRow = sorted([4.85, 4.85, 4.85, 4.85, 4.82, 4.83, 4.86, 4.84])
-# secondRow = sorted([4.83, 4.81, 4.82, 4.85, 4.95, 4.85, 4.85, 4.86])
+firstRow = sorted([3.0, 3.6, 3.3, 3.5, 3.1, 3.3, 3.1, 3.2])
+secondRow = sorted([3.2, 3.5, 3.2, 3.5, 3.2, 3.1, 3.3, 3.2])
 
 # tasky = [
 #     79.20, 79.25, 79.30, 79.35, 79.40, 79.45, 79.50, 79.55,
@@ -122,6 +122,24 @@ def F_test(despr_1, despr_2, x_firstRow_avg, x_secondRow_avg):
             print(f'\t{f=}\n\t{avg_weighted_of_desprs=}\n\t{t_exp=}\n\t{t_exp=}\n')
             return
     print(f'Все услвоия сходяться:\n \t{f=}\n\t{avg_weighted_of_desprs=}\n\t{t_exp=}\n')
+
+
+def calc_map(avg_f, avg_s, abs_avg):
+    data_first_row = [
+        1.00,1.02,0.70,1.02,1.02,1.00,1.03,1.02,1.03,1.00,1.01,0.71,
+        0.99,0.81,1.00,1.02,1.02,1.05,1.00,0.99,1.00,1.02,1.02,1.01,1.02,
+    ]
+    data_second_row = [
+        0.97,1.01,0.70,1.03,1.03,1.02,1.01,1.00,1.02,1.00,1.02,0.74,
+        1.00,0.79,1.00,1.03,1.02,1.03,1.00,1.00,1.00,1.03,1.03,1.02,1.04,
+    ]
+
+    avg_data = []
+
+    for i in range(0, len(data_first_row)):
+            avg_data.append((data_first_row[i]+data_second_row[i])/2)
+    
+    
 
 
 if __name__ == '__main__':

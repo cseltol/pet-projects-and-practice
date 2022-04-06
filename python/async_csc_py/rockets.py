@@ -4,7 +4,7 @@ import random
 from enum import Enum, auto
 
 """
-Explicit Finite-State Machine(FSM) 
+    Explicit Finite-State Machine(FSM) 
 """
 
 

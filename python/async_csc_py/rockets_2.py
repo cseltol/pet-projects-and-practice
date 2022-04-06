@@ -6,7 +6,7 @@ from enum import Enum, auto
 
 
 """
-Not Explicit Finite-State Machine(FSM)
+    Not Explicit Finite-State Machine(FSM)
 """
 
 

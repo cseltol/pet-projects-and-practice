@@ -123,22 +123,55 @@ def F_test(despr_1, despr_2, x_firstRow_avg, x_secondRow_avg):
             print(f'\t{f=}\n\t{avg_weighted_of_desprs=}\n\t{t_exp=}\n\t{t_exp=}\n')
             return
     print(f'Все условия сходятся:\n \t{f=}\n\t{avg_weighted_of_desprs=}\n\t{t_exp=}\n')
+    avg_data, mm, vlp, acc = calc_map()
+    print(avg_data)
+    print()
+    print(mm)
+    print()
+    print(vlp)
+    print()
+    print(acc)
+    print("avg avg")
+    print(sum(avg_data) / len(avg_data))
 
-
-def calc_map(avg_f, avg_s, abs_avg):
+def calc_map():
     data_first_row = [
-        1.00, 1.02, 0.70, 1.02, 1.02, 1.00, 1.03, 1.02, 1.03, 1.00, 1.01, 0.71,
-        0.99, 0.81, 1.00, 1.02, 1.02, 1.05, 1.00, 0.99, 1.00, 1.02, 1.02, 1.01, 1.02,
+        0.89, 1.02, 0.92, 1.02, 0.98, 1.00, 0.99, 1.02, 1.00, 1.01, 1.01,
+        0.89, 0.99, 0.81, 1.03, 1.04, 1.02, 1.01, 1.07, 0.98, 1.01, 1.05,
+        1.02, 1.03, 1.04
     ]
+
     data_second_row = [
-        0.97, 1.01, 0.70, 1.03, 1.03, 1.02, 1.01, 1.00, 1.02, 1.00, 1.02, 0.74,
-        1.00, 0.79, 1.00, 1.03, 1.02, 1.03, 1.00, 1.00, 1.00, 1.03, 1.03, 1.02, 1.04,
+        0.97, 1.02, 0.94, 1.01, 1.01, 1.02, 1.02, 1.00, 1.01, 1.00, 1.06,
+        0.92, 1.01, 0.79, 1.00, 1.07, 1.03, 1.03, 1.01, 1.03, 0.97, 1.07,
+        1.03, 1.02, 1.06
     ]
+
+    # C = 1.0
 
     avg_data = []
+    mm = []
+    vlp = []
+    acc = []
+    C = 1.02
 
     for i in range(0, len(data_first_row)):
-        avg_data.append((data_first_row[i] + data_second_row[i]) / 2)
+        avg_data.append(round((data_first_row[i] + data_second_row[i]) / 2, 3))
+
+    for i in range(0, len(data_first_row)):
+        if data_first_row[i] > data_second_row[i]:
+            mm.append(round(data_first_row[i] - data_second_row[i], 3))
+        else:
+            mm.append(round(data_second_row[i] - data_first_row[i], 3))
+
+    for i in range(0, len(data_first_row)):
+        vlp.append(round(abs(data_first_row[i] - avg_data[i]), 3))
+
+    for i in range(0, len(data_first_row)):
+        acc.append(round(data_first_row[i] - C, 3))
+    
+
+    return avg_data, mm, vlp, acc
 
 
 if __name__ == '__main__':

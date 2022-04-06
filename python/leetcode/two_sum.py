@@ -2,7 +2,7 @@ from typing import List
 
 
 def two_sum(nums: List[int], target: int) -> List[int]:
-    is_solved = False
+    is_solved = Falseа
     answer = []
     i = 0
     while i < len(nums) and not is_solved:
